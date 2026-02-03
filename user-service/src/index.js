@@ -3,10 +3,9 @@ dotenv.config();
 import app from "./app.js";
 import connectDB from "./db/index.js";
 
-console.log("process.env.MONGO_URI", process.env.MONGO_URI);
 connectDB()
     .then(() => {
-        const PORT = process.env.PORT || 5000;
+        const PORT = process.env.PORT || 3000;
         app.listen(PORT, () => {
             console.log(`User Service running on port ${PORT}`);
         });
